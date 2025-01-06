@@ -1,0 +1,64 @@
+## Anomaly Detection in Real-Time Data Stream
+
+This project implements an anomaly detection system in Python, designed to monitor and flag unusual patterns in a continuous data stream. Using a rolling window with the Z-score method, this system can dynamically update to adapt to concept drift and seasonal changes in the data.
+
+# Project Overview
+
+This project aims to detect anomalies in a data stream of floating-point numbers, simulating real-time monitoring of metrics like financial transactions or system performance. By identifying abnormal values in real-time, we handle seasonality and randomness, capturing a realistic and dynamic data environment.
+
+# 1. Implementation Steps
+
+Step 1: Algorithm Selection
+
+_Anomaly Detection Algorithm_: The Z-score method is a common and efficient approach for real-time anomaly detection. It calculates how many standard deviations a given value is from the mean
+flagging values that deviate significantly.
+
+_Rolling Window_: To handle concept drift, we use a rolling window that dynamically updates the mean and standard deviation, adjusting to changes in the data over time.
+
+Step 2: Data Stream Simulation
+A simulated data stream generates a continuous sequence of values that incorporates regular patterns, seasonal variations, and random noise. This allows us to test the model under realistic conditions with controlled anomalies.
+
+Step 3: Anomaly Detection with Z-score
+Using the Z-score, any data point that deviates significantly from the rolling mean and standard deviation is flagged as an anomaly. This method efficiently identifies outliers in real-time.
+
+Step 4: Optimization
+Efficient Data Management: Python's deque structure from the collections library is used for the rolling window. This structure allows for efficient updates of the mean and standard deviation, which optimizes the Z-score calculations.
+
+Step 5: Real-Time Visualization
+Data Visualization: Using Matplotlib's FuncAnimation class, we display data points in real-time, highlighting flagged anomalies. Normal data points appear in blue, while anomalies are marked in red for easy observation.
+
+# 2. Installation and Setup
+    
+    1. Requirements: Ensure Python 3.x and pip are installed.
+
+        python3 --version
+        pip3 --version
+
+    2. Clone the Project:
+        git clone <repository_link>
+        cd anomaly_detection_project
+
+    3. Install Dependencies: Install necessary Python libraries by running:
+        pip3 install -r requirements.txt
+
+    4. Verify Installation: Make sure required packages like numpy and matplotlib are installed:
+        pip3 show numpy matplotlib
+
+# 3. Running the Project
+Execute the following command to start the anomaly detection system and visualize data in real-time:
+
+     python3 main.py
+
+# 4. Project Submission Requirements
+
+Ensure that your submission includes the following:
+
+1. Documentation: Each section of the code is thoroughly commented to describe its function and logic.
+2. Algorithm Explanation: Provide a markdown file or section in the README explaining the choice of the Z-score method and its effectiveness in real-time anomaly detection.
+3. Requirements File: List any external libraries in requirements.txt, specifying the versions if necessary (e.g., matplotlib).
+4. Robust Error Handling: Add error handling and validation checks within the code.
+
+# 5. Example Output
+The real-time plot displays incoming data points, marking normal data in blue and anomalies in red, offering an immediate visual indication of unusual activity.
+
+
